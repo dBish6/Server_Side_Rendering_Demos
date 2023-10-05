@@ -1,5 +1,5 @@
 {
-  "name": "react_server_side_rendering_demo",
+  "name": "react_server_side_rendering_demos",
   "private": true,
   "version": "1.0.0",
   "author": "David Bishop",
@@ -15,10 +15,11 @@
   "scripts": {
     "dev:front": "npm --workspace front-end run dev",
     "dev:back": "npm --workspace back-end run dev",
+    "build": "npm run build --workspace front-end --workspace back-end",
     "build:front": "npm --workspace front-end run build",
     "build:back": "npm --workspace back-end run build",
-    "server": "npm --workspace back-end run start",
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
+    "test": "npm --workspace front-end run test",
     "clean": "rmdir /s /q node_modules"
   },
   "dependencies": {
@@ -26,8 +27,14 @@
     "react-dom": "^18.2.0"
   },
   "devDependencies": {
+    "@types/node": "^16.18.57",
     "@types/react": "^18.2.15",
     "@types/react-dom": "^18.2.7",
+    "@typescript-eslint/eslint-plugin": "^6.0.0",
+    "@typescript-eslint/parser": "^6.0.0",
+    "eslint": "^8.45.0",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-react-refresh": "^0.4.3",
     "typescript": "^5.2.2"
   }
 }
