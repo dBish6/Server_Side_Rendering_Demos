@@ -1,4 +1,5 @@
 import express, { Request, Response } from "express";
+import dotenv from "dotenv";
 import morgan from "morgan";
 
 import fs from "fs/promises";
@@ -8,28 +9,27 @@ import React from "react";
 import ReactDOMserver from "react-dom/server";
 import ReactApp from "../../front-end/src/App";
 
-const app = express(),
-  PORT = Number(process.env.HOST) || 4000;
+const app = express();
+dotenv.config();
+
+const PORT = Number(process.env.HOST) || 4000;
 
 app.use(express.static(path.resolve(__dirname, "../../front-end/build")));
 app.use(morgan("dev"));
 
 app.get("/*", async (req: Request, res: Response) => {
-  console.log("req.url", req.url);
-  console.log("req.headers", req.headers);
-  console.log("PATH", path.resolve(__dirname, "../../front-end/build"));
   try {
-    const data = await fs.readFile(
+    const template = await fs.readFile(
       path.resolve(__dirname, "../../front-end/build/index.html"),
       "utf-8"
     );
-    console.log("data", data);
+
     const content = ReactDOMserver.renderToString(
       React.createElement(ReactApp)
     );
     content
       ? res.send(
-          data.replace(
+          template.replace(
             `<div id="root"></div>`,
             `<div id="root">${content}</div>`
           )
