@@ -1,0 +1,15 @@
+{
+  "extends": "../tsconfig.json",
+  "compilerOptions": {
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
+    "lib": ["ES2020", "dom"],
+    "target": "ES2020",
+    "sourceMap": true,
+    "esModuleInterop": true,
+    "outDir": "build"
+  },
+  "include": ["src"],
+  "files": ["src/server.ts"],
+  "exclude": ["**/*.svg"]
+}

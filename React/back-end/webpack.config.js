@@ -15,7 +15,7 @@ module.exports = {
       {
         test: /\.tsx?$/,
         use: "ts-loader",
-        exclude: /node_modules/,
+        exclude: /(node_modules|\.svg$)/,
       },
       {
         test: /\.(js|jsx)$/,
@@ -32,12 +32,15 @@ module.exports = {
         use: ["null-loader"],
       },
       {
-        test: /\.svg$/,
-        use: "file-loader",
-      },
-      {
-        test: /\.png$/,
-        use: "file-loader",
+        test: /\.(svg|png)$/,
+        use: {
+          loader: "file-loader",
+          options: {
+            name: "[name].[ext]",
+            outputPath: "assets/",
+            publicPath: "/assets/",
+          },
+        },
       },
     ],
   },
