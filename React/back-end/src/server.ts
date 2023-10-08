@@ -12,7 +12,7 @@ import ReactApp from "../../front-end/src/App";
 const app = express();
 dotenv.config();
 
-const PORT = Number(process.env.HOST) || 4000;
+const PORT = Number(process.env.PORT) || 4000;
 
 app.use(express.static(path.resolve(__dirname, "../../front-end/build")));
 app.use(morgan("dev"));
@@ -44,7 +44,7 @@ app.get("/*", async (req: Request, res: Response) => {
   }
 });
 
-app.listen(PORT, "localhost", () =>
+app.listen(PORT, process.env.HOST as string, () =>
   console.log(
     `Server is running on ${process.env.PROTOCOL}${process.env.HOST}:${PORT}; Ctrl-C to terminate...`
   )
