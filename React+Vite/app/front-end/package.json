@@ -1,0 +1,12 @@
+{
+  "name": "front-end",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "build": "tsc && vite build"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.0.3"
+  }
+}

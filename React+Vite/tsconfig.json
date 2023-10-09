@@ -1,0 +1,32 @@
+{
+  "compilerOptions": {
+    "skipLibCheck": true,
+    // "composite": true,
+    "module": "ESNext",
+    "moduleResolution": "node",
+
+    /* Bundler mode */
+    "allowImportingTsExtensions": true,
+    "allowSyntheticDefaultImports": true,
+    "noEmit": true,
+    "allowJs": true,
+    "resolveJsonModule": true,
+    "jsx": "react-jsx",
+
+    /* Linting */
+    "strict": true,
+    // "noUnusedLocals": true,
+    // "noUnusedParameters": true,
+    // "noFallthroughCasesInSwitch": true
+    "paths": {
+      "@sharedTsConfig": ["./tsconfig.json"],
+      "@sharedViteConfig": ["./vite.config.ts"],
+      "@front-end/*": ["./app/front-end/src/*"],
+      "@back-end/*": ["./app/front-end/src/*"]
+    }
+  },
+  "references": [
+    { "path": "./app/front-end/tsconfig.json" },
+    { "path": "./app/back-end/tsconfig.json" }
+  ]
+}
