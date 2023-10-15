@@ -6,9 +6,9 @@
   "main": "src/server.ts",
   "type": "module",
   "scripts": {
-    "dev": "node --trace-warnings --loader ts-node/esm --experimental-specifier-resolution=node ./src/server.ts",
+    "dev": "NODE_ENV=development nodemon",
     "build": "webpack --config webpack.config.cjs",
-    "serve": "NODE_ENV=production node ./build/server.js",
+    "serve": "NODE_ENV=production node ./build/server.cjs",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {

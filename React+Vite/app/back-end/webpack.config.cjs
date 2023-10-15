@@ -4,11 +4,11 @@ const nodeExternals = require("webpack-node-externals");
 module.exports = {
   entry: "./src/server.ts",
   target: "node",
-  externals: [nodeExternals({ importType: "esm" })],
+  externals: [nodeExternals()],
   mode: "production",
   output: {
     path: path.join(__dirname, "build"),
-    filename: "server.js",
+    filename: "server.cjs",
   },
   module: {
     rules: [
