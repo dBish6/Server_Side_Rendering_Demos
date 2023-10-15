@@ -1,0 +1,16 @@
+{
+  "extends": "../../tsconfig.json",
+  "compilerOptions": {
+    "module": "ESNext",
+    "moduleResolution": "Node10",
+    "lib": ["ES2020"],
+    "target": "ES2020",
+    "sourceMap": true,
+    "outDir": "build",
+
+    "allowImportingTsExtensions": false,
+    "noEmit": false,
+    "forceConsistentCasingInFileNames": true
+  },
+  "include": ["src/**/*"]
+}
