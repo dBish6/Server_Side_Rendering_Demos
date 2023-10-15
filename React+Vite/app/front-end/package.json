@@ -4,6 +4,7 @@
   "version": "1.0.0",
   "main": "ssr.ts",
   "type": "module",
+  "proxy": "http://localhost:4000",
   "scripts": {
     "dev": "NODE_ENV=development node --trace-warnings --loader ts-node/esm --experimental-specifier-resolution=node ./ssr.ts",
     "build": "tsc && vite build && tsc && vite build --outDir build/ssr --ssr ../front-end/src/entry-server",

@@ -8,7 +8,6 @@ export default mergeConfig(
       middlewareMode: true,
     },
     ssr: {},
-    // plugins: [react()],
     build: {
       outDir: "build/client",
     },
