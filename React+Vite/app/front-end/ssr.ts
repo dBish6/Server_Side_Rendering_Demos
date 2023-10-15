@@ -65,7 +65,7 @@ const createServer = async () => {
       }
 
       // 4. Render the app HTML.
-      const appHtml = await render(url);
+      const appHtml = await render({ path: url });
       // console.log("appHtml", appHtml);
 
       // 5. Inject the app-rendered HTML into the template.
