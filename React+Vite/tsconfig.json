@@ -18,10 +18,8 @@
     /* Linting */
     "strict": true,
     "paths": {
-      "@sharedTsConfig": ["./tsconfig.json"],
-      "@sharedViteConfig": ["./vite.config.ts"],
       "@front-end/*": ["./app/front-end/src/*"],
-      "@back-end/*": ["./app/front-end/src/*"]
+      "@back-end/*": ["./app/back-end/src/*"]
     }
   },
   "references": [
