@@ -1,12 +1,23 @@
 {
   "name": "front-end",
   "private": true,
-  "version": "0.0.0",
+  "version": "1.0.0",
+  "main": "ssr.ts",
   "type": "module",
   "scripts": {
-    "build": "tsc && vite build"
+    "dev": "NODE_ENV=development node --trace-warnings --loader ts-node/esm --experimental-specifier-resolution=node ./ssr.ts",
+    "build": "tsc && vite build && tsc && vite build --outDir build/ssr --ssr ../front-end/src/entry-server",
+    "serve": "NODE_ENV=production node --trace-warnings --loader ts-node/esm --experimental-specifier-resolution=node ./ssr.ts"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.16.0",
+    "sirv": "^2.0.3"
   },
   "devDependencies": {
-    "@vitejs/plugin-react": "^4.0.3"
+    "@types/react": "^18.2.15",
+    "@types/react-dom": "^18.2.7",
+    "vite": "^4.4.5"
   }
 }

@@ -4,13 +4,13 @@ import sharedConfig from "../../vite.config";
 export default mergeConfig(
   sharedConfig,
   defineConfig({
-    // server: {
-    //   host: "localhost",
-    //   port: 3000,
-    // },
+    server: {
+      middlewareMode: true,
+    },
+    ssr: {},
     // plugins: [react()],
     build: {
-      outDir: "build",
+      outDir: "build/client",
     },
   })
 );
