@@ -54,16 +54,16 @@ app.use(
   morgan(":method :url :status :response-time ms \n headers: :all-headers")
 );
 
-app.get("/example", async (req: Request, res: Response, next: NextFunction) => {
-  res.json({ message: "Hello from the back-end!" });
-});
-
 // *Custom*
 // app.use(someCustomMiddleware);
 
 // *Router*
 // app.use(`${baseUrl}/auth`, someRouter);
 // app.use(`${baseUrl}/csrf`, someRouter);
+
+app.get("/", async (req: Request, res: Response) => {
+  res.json({ message: "Hello from the back-end!" });
+});
 
 app.listen(PORT, "localhost", () =>
   console.log(
