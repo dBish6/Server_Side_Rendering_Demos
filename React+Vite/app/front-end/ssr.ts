@@ -36,8 +36,12 @@ const createServer = async () => {
 
   app.use("*", async (req: Request, res: Response, next: NextFunction) => {
     const url = req.originalUrl;
+    console.log("requested", url);
 
-    console.log("url", url);
+    if (url === "/") {
+      res.redirect(301, "/home");
+      return;
+    }
     try {
       let template, render;
 
@@ -45,7 +49,6 @@ const createServer = async () => {
       // 1. Read index.html
       if (process.env.NODE_ENV === "development") {
         template = fs.readFileSync(path.resolve("./index.html"), "utf-8");
-        console.log("template", template);
 
         // 2. Apply Vite HTML transforms. This injects the Vite HMR client,
         //    and also applies HTML transforms from Vite plugins, if any.
@@ -66,7 +69,6 @@ const createServer = async () => {
 
       // 4. Render the app HTML.
       const appHtml = await render({ path: url });
-      // console.log("appHtml", appHtml);
 
       // 5. Inject the app-rendered HTML into the template.
       const html = template.replace("<!--ssr-outlet-->", appHtml);

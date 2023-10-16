@@ -16,7 +16,6 @@ function App() {
       <Route path="/about" element={<About />} />
       <Route path="/support" element={<Support />} />
       <Route path="/error404" element={<Error404 />} />
-      {/* <Route path="/" element={<Navigate to="/home" />} /> */}
       <Route path="*" element={<Navigate to="/error404" />} />
     </Routes>
   );
