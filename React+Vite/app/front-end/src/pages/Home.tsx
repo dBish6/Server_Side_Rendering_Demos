@@ -1,4 +1,4 @@
-import Dummy from "@front-end/components/Dummy";
+import Dummy from "../components/Dummy";
 
 const Home = () => {
   return <Dummy pageTxt="Home Page" />;

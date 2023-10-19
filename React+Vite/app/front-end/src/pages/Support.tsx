@@ -1,6 +1,6 @@
-import email from "@front-end/assets/envelope.png";
+import email from "../assets/envelope.png";
 
-import Dummy from "@front-end/components/Dummy";
+import Dummy from "../components/Dummy";
 import { Link } from "react-router-dom";
 
 const Support = () => {

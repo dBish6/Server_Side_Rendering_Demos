@@ -1,8 +1,8 @@
-import githubLogo from "@front-end/assets/github.svg";
-import linkedinLogo from "@front-end/assets/linkedIn.svg";
-import email from "@front-end/assets/envelope.png";
+import githubLogo from "../assets/github.svg";
+import linkedinLogo from "../assets/linkedIn.svg";
+import email from "../assets/envelope.png";
 
-import Dummy from "@front-end/components/Dummy";
+import Dummy from "../components/Dummy";
 
 const About = () => {
   return (
