@@ -7,8 +7,9 @@
   "proxy": "http://localhost:4000",
   "scripts": {
     "dev": "NODE_ENV=development nodemon",
-    "build": "tsc && vite build && tsc && vite build --outDir build/ssr --ssr ../front-end/src/entry-server",
-    "serve": "NODE_ENV=production node --trace-warnings --loader ts-node/esm --experimental-specifier-resolution=node ./ssr.ts"
+    "build": "tsc && vite build | tsc && vite build --outDir build/ssr --ssr ../front-end/src/entry-server",
+    "serve": "NODE_ENV=production node --trace-warnings --loader ts-node/esm --experimental-specifier-resolution=node ./ssr-server.ts",
+    "clean": "rm -rf node_modules"
   },
   "dependencies": {
     "react": "^18.2.0",

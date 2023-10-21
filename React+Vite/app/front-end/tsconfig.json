@@ -8,5 +8,5 @@
     "allowSyntheticDefaultImports": true,
     "noEmit": true
   },
-  "include": ["./vite.config.ts", "src/**/*", "./ssr.ts"]
+  "include": ["./vite.config.ts", "src/**/*", "ssr-server.ts"]
 }

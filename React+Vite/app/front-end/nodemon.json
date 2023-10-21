@@ -1,5 +1,5 @@
 {
   "watch": ["src"],
   "ext": "ts, js",
-  "exec": "node --trace-warnings --loader ts-node/esm --experimental-specifier-resolution=node ./ssr.ts"
+  "exec": "node --trace-warnings --loader ts-node/esm --experimental-specifier-resolution=node ./ssr-server.ts"
 }
