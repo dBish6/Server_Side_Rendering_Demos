@@ -3,9 +3,9 @@
 
 import fs from "fs";
 import path from "path";
-import express, { Request, Response, NextFunction } from "express";
+import express from "express";
 import dotenv from "dotenv";
-import { createServer as createViteServer, ViteDevServer } from "vite";
+// import { createServer as createViteServer, ViteDevServer } from "vite";
 import sirv from "sirv";
 
 const createServer = async () => {
@@ -15,8 +15,9 @@ const createServer = async () => {
   // Create Vite server in middleware mode and configure the app type as
   // 'custom', disabling Vite's own HTML serving logic so the parent server
   // can take control
-  let vite: ViteDevServer;
+  let vite;
   if (process.env.NODE_ENV === "development") {
+    const { createServer: createViteServer } = await import("vite");
     vite = await createViteServer({
       server: { middlewareMode: true },
       appType: "custom",
@@ -34,14 +35,14 @@ const createServer = async () => {
     );
   }
 
-  app.use("*", async (req: Request, res: Response, next: NextFunction) => {
+  app.use("*", async (req, res, next) => {
     const url = req.originalUrl;
     console.log("requested", url);
 
-    if (url === "/") {
-      res.redirect(301, "/home");
-      return;
-    }
+    // if (url === "/") {
+    //   res.redirect(301, "/home");
+    //   return;
+    // }
     try {
       let template, render;
 
@@ -64,7 +65,7 @@ const createServer = async () => {
           "utf-8"
         );
         // @ts-ignore
-        render = (await import("./build/ssr/entry-server")).render;
+        render = (await import("./build/ssr/entry-server.js")).render;
       }
 
       // 4. Render the app HTML.
@@ -76,7 +77,7 @@ const createServer = async () => {
       // 6. Send the rendered HTML back.
       res.status(200).set({ "Content-Type": "text/html" }).end(html);
       next();
-    } catch (error: any) {
+    } catch (error) {
       // If an error is caught, let Vite fix the stack trace.
       process.env.NODE_ENV === "development" && vite.ssrFixStacktrace(error);
       next(error);

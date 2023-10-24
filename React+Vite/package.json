@@ -15,15 +15,15 @@
   "scripts": {
     "dev:front": "npm --workspace front-end run dev",
     "dev:back": "npm --workspace back-end run dev",
-    "serve": "npm run serve --workspace front-end --workspace back-end",
+    "serve": "npm run serve --workspaces",
     "serve:front": "npm --workspace front-end run serve",
     "serve:back": "npm --workspace back-end run serve",
-    "build": "npm run build --workspace front-end --workspace back-end",
+    "build": "npm run build --workspaces",
     "build:front": "npm --workspace front-end run build",
     "build:back": "npm --workspace back-end run build",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "clean": "rmdir /s /q node_modules"
+    "clean": "rm -rf node_modules && npm run clean --workspaces"
   },
   "dependencies": {
     "dotenv": "^16.3.1",

@@ -1,7 +1,8 @@
 {
-  "exclude": ["node_modules", "build"],
+  "exclude": ["node_modules", "build/*/**", "**/*.js", "**/*.cjs"],
   "compilerOptions": {
     "baseUrl": ".",
+    // "rootDir": ".",
     "skipLibCheck": true,
     "composite": true,
     "module": "ESNext",

@@ -2,24 +2,26 @@
   "name": "front-end",
   "private": true,
   "version": "1.0.0",
-  "main": "ssr.ts",
+  "main": "ssr-server.js",
   "type": "module",
   "proxy": "http://localhost:4000",
   "scripts": {
     "dev": "NODE_ENV=development nodemon",
     "build": "tsc && vite build | tsc && vite build --outDir build/ssr --ssr ../front-end/src/entry-server",
-    "serve": "NODE_ENV=production node --trace-warnings --loader ts-node/esm --experimental-specifier-resolution=node ./ssr-server.ts",
+    "serve": "NODE_ENV=production node --loader esm --experimental-specifier-resolution=node ./ssr-server.js",
     "clean": "rm -rf node_modules"
   },
   "dependencies": {
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.16.0",
+    "serve": "^14.2.1",
     "sirv": "^2.0.3"
   },
   "devDependencies": {
     "@types/react": "^18.2.15",
     "@types/react-dom": "^18.2.7",
+    "@vitejs/plugin-react": "^4.1.0",
     "vite": "^4.4.5",
     "vite-tsconfig-paths": "^4.2.1"
   }
