@@ -1,0 +1,17 @@
+{
+  "extends": "../tsconfig.json",
+  "exclude": ["node_modules"],
+  "include": ["./**/*.ts*"],
+  "compilerOptions": {
+    "target": "ESNext",
+
+    "paths": {
+      "@constants/*": ["./src/constants/*"],
+      "@middleware/*": ["./src/middleware/*"],
+      "@model/*": ["./src/model/*"],
+      "@utils/*": ["./src/utils/*"],
+
+      "@authFeat/*": ["./src/features/auth/*"]
+    }
+  }
+}
