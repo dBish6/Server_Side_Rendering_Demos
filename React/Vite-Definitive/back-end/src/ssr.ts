@@ -92,5 +92,5 @@ export function handleSsr(app: Express, vite?: ViteDevServer) {
         error.headers.get("Location") || ""
       );
     }
-  }
+  };
 }

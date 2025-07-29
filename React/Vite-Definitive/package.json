@@ -1,5 +1,5 @@
 {
-  "name": "bu-front",
+  "name": "server_side_rendering_demos",
   "private": true,
   "version": "1.0.0",
   "type": "module",
@@ -7,7 +7,7 @@
   "description": "",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/buildingu/bu-front.git"
+    "url": "git+https://github.com/dBish6/Server_Side_Rendering_Demos"
   },
   "engines": {
     "node": ">=22.0.0",

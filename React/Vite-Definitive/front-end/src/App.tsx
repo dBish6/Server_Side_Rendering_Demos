@@ -1,5 +1,5 @@
 /**
- * SSR Demo: Vite-Definitive (front-end)
+ * SSR Demo: Vite-Definitive + React (front-end)
  *
  * Author: David Bishop
  */

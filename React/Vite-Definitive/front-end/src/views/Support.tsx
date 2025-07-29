@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
-
 import Dummy from "../components/Dummy";
+
 export default function Support() {
   return (
     <>
