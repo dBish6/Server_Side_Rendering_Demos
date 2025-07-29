@@ -1,4 +1,4 @@
-# React_Server_Side_Rendering_Demos
+# Server_Side_Rendering_Demos
 
 This is a demo project that showcases different ways you can achieve server-side rendering without the reliance on frameworks like Next.js. You can also use this repository as a template starter.
 
