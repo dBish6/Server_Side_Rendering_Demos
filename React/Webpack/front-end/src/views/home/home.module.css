@@ -1,0 +1,15 @@
+.home section button {
+  padding: 0.6em 1.2em;
+  border-radius: 8px;
+  border: 2px solid transparent;
+  margin-top: 1.25rem;
+  font-size: 16px;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #0b0b0b;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+.home section button:hover {
+  border-color: #a7a7ff;
+}

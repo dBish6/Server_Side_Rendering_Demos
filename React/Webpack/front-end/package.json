@@ -1,0 +1,23 @@
+{
+  "name": "front",
+  "version": "1.0.0",
+  "private": true,
+  "author": "David Bishop",
+  "description": "",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dBish6/React_Server_Side_Rendering_Demos"
+  },
+  "type": "module",
+  "scripts": {
+    "dev": "rm -rf ../build && cross-env NODE_ENV=development npm run build --workspace back && nodemon",
+    "build": "webpack --config webpack.config.cjs",
+    "clean": "rm -rf node_modules"
+  },
+  "devDependencies": {
+    "copy-webpack-plugin": "~13.0.0",
+    "html-webpack-plugin": "~5.6.0",
+    "mini-css-extract-plugin": "~2.9.0",
+    "style-loader": "~4.0.0"
+  }
+}

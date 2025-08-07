@@ -1,0 +1,42 @@
+{
+  "name": "webpack-ssr",
+  "version": "1.0.0",
+  "private": true,
+  "author": "David Bishop",
+  "description": "",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dBish6/Server_Side_Rendering_Demos"
+  },
+  "workspaces": [
+    "front-end",
+    "back-end"
+  ],
+  "scripts": {
+    "dev:front": "npm run dev --workspace front",
+    "dev:back": "npm run dev --workspace back",
+    "build:front": "cross-env NODE_ENV=production npm run build --workspace front",
+    "build:back": "cross-env NODE_ENV=production npm run build --workspace back",
+    "build": "rm -rf ./build && npm run build:back && npm run build:front",
+    "serve": "node build/server.cjs",
+    "clean": "npm run clean --workspaces && rm -rf node_modules"
+  },
+  "dependencies": {
+    "react": "18.3.1",
+    "react-dom": "18.3.1",
+    "react-router-dom": "6.29.0"
+  },
+  "devDependencies": {
+    "@babel/preset-env": "^7",
+    "@babel/preset-react": "^7",
+    "@types/react": "18.3.12",
+    "@types/react-dom": "18.3.1",
+    "babel-loader": "^9",
+    "cross-env": "^7.0.3",
+    "css-loader": "~7.1.0",
+    "dotenv-webpack": "~8.1.0",
+    "nodemon": "^3.1.10",
+    "webpack": "^5",
+    "webpack-cli": "^5"
+  }
+}
