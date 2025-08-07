@@ -1,0 +1,42 @@
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  padding: 1rem 1.5rem 0.5rem;
+}
+
+.footer p {
+  display: block;
+  font-size: 1rem;
+}
+.footer p a:visited {
+  color: #af82d9;
+}
+
+.footer div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+}
+.footer div a {
+  width: 2rem;
+  height: 2rem;
+}
+.footer div a img {
+  width: inherit;
+  transition: 0.28s ease-in-out transform;
+}
+.footer div a:nth-child(3) img {
+  width: 28px;
+}
+.footer div a img:hover {
+  transform: scale(1.2);
+  opacity: 0.8;
+}
+.footer div a img:active {
+  transform: scale(0.9);
+  opacity: 1;
+}
