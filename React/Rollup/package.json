@@ -1,0 +1,43 @@
+{
+  "name": "rollup-ssr",
+  "version": "1.0.0",
+  "private": true,
+  "author": "David Bishop",
+  "description": "",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dBish6/Server_Side_Rendering_Demos"
+  },
+  "workspaces": [
+    "front-end",
+    "back-end"
+  ],
+  "scripts": {
+    "dev:front": "npm run dev --workspace front",
+    "dev:back": "npm run dev --workspace back",
+    "build:front": "dotenv -e .env.production -- npm run build --workspace front",
+    "build:back": "dotenv -e .env.production -- npm run build --workspace back",
+    "build": "rm -rf ./build && npm run build:back && npm run build:front",
+    "serve": "dotenv -e .env.production node build/server.cjs",
+    "clean": "npm run clean --workspaces && rm -rf node_modules"
+  },
+  "dependencies": {
+    "react": "18.3.1",
+    "react-dom": "18.3.1",
+    "react-router-dom": "6.26.2"
+  },
+  "devDependencies": {
+    "@babel/preset-env": "^7",
+    "@babel/preset-react": "^7",
+    "@rollup/plugin-babel": "^6.0.4",
+    "@rollup/plugin-commonjs": "^28.0.0",
+    "@rollup/plugin-node-resolve": "^15.3.0",
+    "@rollup/plugin-terser": "^0.4.4",
+    "@types/react": "^18.3.9",
+    "@types/react-dom": "^18.3.0",
+    "dotenv-cli": "^10.0.0",
+    "nodemon": "^3.1.10",
+    "rollup-plugin-auto-external": "2.0.0",
+    "rollup-plugin-postcss": "4.0.2"
+  }
+}
