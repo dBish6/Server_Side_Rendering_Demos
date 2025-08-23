@@ -3,7 +3,7 @@
  */
 
 import { Router } from "express";
-// import * as authController from "@authFeat/controllers/authController";
+// import * as authController from "../controllers/authController";
 
 const router = Router();
 

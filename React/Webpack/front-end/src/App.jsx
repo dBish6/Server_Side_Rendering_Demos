@@ -30,11 +30,9 @@ export default function App() {
         <Route index element={<Home />} />
         <Route path="home" element={<Home />} />
         <Route path="about" element={<About />} />
+        <Route path="error-404" element={<Error404 />} />
         {typeof window !== "undefined" && (
-          <>
-            <Route path="error-404" element={<Error404 />} />
-            <Route path="*" element={<Navigate to="/error-404" />} />
-          </>
+          <Route path="*" element={<Navigate to="/error-404" />} />
         )}
       </Route>
     </Routes>

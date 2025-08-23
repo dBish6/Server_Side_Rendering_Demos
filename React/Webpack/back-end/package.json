@@ -6,14 +6,13 @@
   "description": "",
   "repository": {
     "type": "git",
-    "url": "https://github.com/dBish6/React_Server_Side_Rendering_Demos"
+    "url": "git+https://github.com/dBish6/Server_Side_Rendering_Demos"
   },
   "type": "module",
   "scripts": {
     "dev": "nodemon",
     "build": "webpack --config webpack.config.cjs",
     "start": "node ../build/server.cjs",
-    "start2": "node src/v1/index.js",
     "clean": "rm -rf node_modules"
   },
   "dependencies": {

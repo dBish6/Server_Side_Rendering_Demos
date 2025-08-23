@@ -1,6 +1,6 @@
 import { static as static_ } from "express";
 
-import { readFileSync } from "fs"
+import { readFileSync } from "fs";
 import { join } from "path";
 
 import { StaticRouter } from "react-router-dom/server";

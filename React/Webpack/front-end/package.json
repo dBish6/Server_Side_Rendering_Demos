@@ -6,7 +6,7 @@
   "description": "",
   "repository": {
     "type": "git",
-    "url": "https://github.com/dBish6/React_Server_Side_Rendering_Demos"
+    "url": "git+https://github.com/dBish6/Server_Side_Rendering_Demos"
   },
   "type": "module",
   "scripts": {

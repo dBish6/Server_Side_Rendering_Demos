@@ -50,7 +50,7 @@ module.exports = {
               esModule: false,
               modules: {
                 exportOnlyLocals: true,
-                localIdentName: "[sha1:hash:hex:4]",
+                localIdentName: "_[sha1:hash:hex:4]",
                 localIdentContext: path.join(__dirname, "..")
               }
             }

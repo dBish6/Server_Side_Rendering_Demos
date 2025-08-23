@@ -53,7 +53,7 @@ async function setupServer() {
       handler: (_, res) => 
         res.status(429).json({
           status: 429,
-          ERROR: "Too many requests made from this IP, please try again after an hour.",
+          ERROR: "Too many requests made from this IP, please try again after an hour."
         })
     })
   );
