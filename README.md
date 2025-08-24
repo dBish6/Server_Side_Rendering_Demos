@@ -6,6 +6,7 @@ This is a demo project that showcases different ways you can achieve server-side
 
 ### React:
 - `Webpack`
+- `Rollup`
 - `Vite`
 - `Vite Definitive`
 
