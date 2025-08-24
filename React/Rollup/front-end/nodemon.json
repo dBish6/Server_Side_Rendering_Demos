@@ -1,0 +1,6 @@
+{
+  "watch": "src",
+  "ext": "js, jsx, json, css",
+  "ignore": ["**/node_modules"],
+  "exec": "dotenv -e ../.env.development -- npm run build && dotenv -e ../.env.development -- npm run start --workspace back"
+}

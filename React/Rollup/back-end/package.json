@@ -11,7 +11,7 @@
   "type": "module",
   "scripts": {
     "dev": "nodemon",
-    "build": "webpack --config webpack.config.cjs",
+    "build": "rollup -c",
     "start": "node ../build/server.cjs",
     "clean": "rm -rf node_modules"
   },
@@ -27,8 +27,7 @@
     "morgan": "^1.10.0"
   },
   "devDependencies": {
-    "dotenv-cli": "^10.0.0",
-    "ignore-loader": "0.1.2",
+    "cross-env": "^10.0.0",
     "tsx": "^4.20.3",
     "webpack-node-externals": "^3.0.0"
   }

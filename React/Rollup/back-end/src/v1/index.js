@@ -1,5 +1,5 @@
 /**
- * SSR Demo: Webpack + React (back-end)
+ * SSR Demo: Rollup + React (back-end)
  * 
  * Author: David Bishop
  */
@@ -41,7 +41,12 @@ async function setupServer() {
   app.use(
     helmet({
       xPoweredBy: false,
-      contentSecurityPolicy: process.env.NODE_ENV === "development" ? false : true
+      contentSecurityPolicy: {
+        directives: {
+          defaultSrc: ["'self'"],
+          scriptSrc: ["'self'", "https://unpkg.com"]
+        }
+      }
     })
   );
   app.use(hpp()); // Protects against HTTP Parameter Pollution attacks.
@@ -66,7 +71,7 @@ async function setupServer() {
 
   // Test entry route.
   app.get(`${baseUrl}/`, async (_, res) => {
-    res.json({ message: "Webpack api online!" });
+    res.json({ message: "Rollup api online!" });
   });
 
   if (!process.env.API_DEV) (await import("./ssr")).default(app);

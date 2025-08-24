@@ -1,5 +1,5 @@
 /**
- * SSR Demo: Webpack + React (front-end)
+ * SSR Demo: Rollup + React (front-end)
  *
  * Author: David Bishop
  */
@@ -20,7 +20,7 @@ function Layout() {
       </main>
       <Footer />
     </>
-  );
+  )
 }
 
 export default function App() {
@@ -36,5 +36,5 @@ export default function App() {
         )}
       </Route>
     </Routes>
-  );
+  )
 }

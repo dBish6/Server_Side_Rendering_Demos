@@ -1,0 +1,6 @@
+{
+  "watch": "src",
+  "ext": "js, jsx, json",
+  "ignore": ["**/node_modules"],
+  "exec": "dotenv -e ../.env.development cross-env API_DEV=true tsx src/v1/index.js"
+}

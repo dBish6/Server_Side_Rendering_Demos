@@ -25,7 +25,7 @@ function render(location) {
 }
 
 export default function setupSSR(app) {
-  app.use("/public",
+  app.use("/static",
     static_(
       join(process.cwd(), `${process.env.NODE_ENV === "development" ? ".." : ""}/build/public`)
     )
